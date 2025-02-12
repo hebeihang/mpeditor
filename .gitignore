@@ -7,3 +7,5 @@ test/unit/coverage
 dist
 yarn.lock
 package-lock.json
+
+.vercel
