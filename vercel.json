@@ -1,19 +1,19 @@
 {
-    "builds": [
-      {
-        "src": "dist/**",
-        "use": "@vercel/static"
-      }
-    ],
+    "version": 2,
+    "public": true,
+    "builds": [],
+    "ignoreCommand": "git log -1 --pretty=format:%H",
     "routes": [
       {
         "src": "/static/(.*)",
-        "dest": "/dist/static/$1"
+        "headers": { "Cache-Control": "max-age=31536000, immutable" },
+        "dest": "/static/$1"
       },
       {
         "src": "/(.*)",
-        "dest": "/dist/index.html"
+        "dest": "/index.html"
       }
-    ]
+    ],
+    "outputDirectory": "dist"
   }
   
